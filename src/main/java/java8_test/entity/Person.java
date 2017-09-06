@@ -2,17 +2,18 @@ package java8_test.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import java.sql.Timestamp;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 @Entity
 @Data
 @AllArgsConstructor
+@Table(name = "person")
 public class Person {
+    @Id
     @Column(name = "id")
     private Integer id;
 

@@ -3,7 +3,11 @@ package java8_test;
 import java8_test.entity.Person;
 import org.junit.Test;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -65,4 +69,18 @@ public class FuncStreamTest {
         return person;
     }
 
+    @Test
+    public void getCurrentDate() throws Exception {
+         Date date1 = Calendar.getInstance().getTime();
+        Date date2= new java.sql.Date(System.currentTimeMillis());
+
+         SimpleDateFormat last1 =new SimpleDateFormat("yyyy-MM-dd HH:mm:sss");
+        SimpleDateFormat last2 =new SimpleDateFormat("yyyy-MM-dd");
+        Timestamp timestamp1 =  new Timestamp(System.currentTimeMillis());
+        Timestamp timestamp2 = Timestamp.valueOf( date2+" 09:00:00");
+        Date date3= last2.parse(date2.toString());
+        int aa= timestamp2.compareTo(date3);
+        System.out.println(last1.format(timestamp1));
+        System.out.println(last1.format(timestamp2));
+    }
 }
