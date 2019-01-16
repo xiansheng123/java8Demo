@@ -8,9 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controllers {
 
-    @PostMapping(name = "/getOnePerson")
-    public Object getOnePerson(@RequestBody PersonDto personDto){
-        PersonDto aa= personDto;
-        return aa;
+    @PostMapping(value = "/getOnePerson")
+    public Object getOnePerson(@RequestBody PersonDto personDto) {
+        return personDto;
+    }
+
+    @PostMapping(value = "/test")
+    public String test() {
+        return "call test";
     }
 }
