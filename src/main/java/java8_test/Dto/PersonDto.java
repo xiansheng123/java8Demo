@@ -1,6 +1,6 @@
 package java8_test.Dto;
 
-import lombok.*;
+import lombok.Value;
 
 
 @Value
