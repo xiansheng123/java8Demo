@@ -1,10 +1,8 @@
 package java8_test;
 
 import java8_test.entity.Person;
-import org.apache.tomcat.jni.Directory;
 import org.assertj.core.util.Files;
 import org.junit.Test;
-
 import java.io.File;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -100,10 +98,10 @@ public class FuncStreamTest {
             File newFile = new File (folderFullName + "\\" + temp.getName ());
             temp.renameTo (newFile);
 
-           if(newFile.exists ())
-               System.out.println (newFile.getName ()+"move successfully");
-           else
-               System.out.println (newFile.getName ()+"move faill");
+            if (newFile.exists ())
+                System.out.println (newFile.getName () + "move successfully");
+            else
+                System.out.println (newFile.getName () + "move faill");
         }
 
     }
